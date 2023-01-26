@@ -1,0 +1,40 @@
+menu "Application Configuration"
+
+	menu "WiFi Setting"
+
+		config ESPCAM_WIFI_SSID
+			string "WiFi SSID"
+			default "myssid"
+			help
+				SSID (network name) to connect to.
+
+		config ESPCAM_WIFI_PASSWORD
+			string "WiFi Password"
+			default "mypassword"
+			help
+				WiFi password (WPA or WPA2) to connect to.
+
+		config ESPCAM_MAXIMUM_RETRY
+			int "Maximum retry"
+			default 5
+			help
+				Set the Maximum retry to avoid station reconnecting to the AP unlimited when the AP is really inexistent.
+	endmenu
+
+	choice BOARD
+		bool "Select Board"
+		default BOARD_ESP32CAM_AITHINKER
+		help
+			Select Board Type.
+
+		config BOARD_WROVER_KIT
+			bool "Freenove ESP32-WROVER CAM Board"
+		config BOARD_CAMERA_MODEL_ESP_EYE
+			bool "Espressif ESP-EYE"
+		config BOARD_ESP32CAM_AITHINKER
+			bool "AiThinker ESP32-CAM"
+		config BOARD_CAMERA_MODEL_TTGO_T_JOURNAL
+			bool "TTGO T-Journal ESP32 Camera"
+	endchoice
+
+endmenu
