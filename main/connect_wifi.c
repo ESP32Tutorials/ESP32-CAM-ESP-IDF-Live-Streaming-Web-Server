@@ -5,8 +5,8 @@ static const char *TAG = "Connect_WiFi";
 int s_retry_num = 0;
 
 
-#define WIFI_SSID "HUAWEI-u67E"
-#define WIFI_PASSWORD "4uF77R2n"
+#define WIFI_SSID "replace_with_your_ssid"
+#define WIFI_PASSWORD "replace_with_your_password"
 #define MAXIMUM_RETRY 5
 /* FreeRTOS event group to signal when we are connected*/
 EventGroupHandle_t s_wifi_event_group;
